@@ -237,10 +237,10 @@
   
   <section class="login">
   <h2>Login Here</h2>
-  <form action="/cs13-project/home.html" method="get">
+  <form>
   <div>Username: <input type="text" name="username" /></div>
   <div>Password: <input type="password" name="password" /></div>
-  <input type="submit" value="Login" />
+  <input type="submit" value="Login" onclick="login()" />
   </form>
   </section>
 
@@ -249,31 +249,9 @@
   </footer>
 
   <script>
-    const loginLink = document.getElementById('loginLink');
-    const logoutBtn = document.getElementById('logoutBtn');
-
-    function logout() {
-      localStorage.removeItem('loggedInUser');
-      logoutBtn.style.display = 'none';
-      loginLink.style.display = 'inline-block';
-      window.location.href = 'LoginRegister.html';
+    function login() {
+      window.location.href = "https://kolay143.github.io/cs13-project/home.html";
     }
-
-    window.onload = () => {
-      const loggedInUser = localStorage.getItem('loggedInUser');
-      if (loggedInUser) {
-        loginLink.style.display = 'none';
-        logoutBtn.style.display = 'inline-block';
-      } else {
-        loginLink.style.display = 'inline-block';
-        logoutBtn.style.display = 'none';
-      }
-      AOS.init({
-        once: true,
-        duration: 800,
-        easing: 'ease-in-out',
-      });
-    };
   </script>
 </body>
 </html>
